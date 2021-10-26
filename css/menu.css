@@ -1,0 +1,59 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.personal-menu {
+  margin-left: 30px;
+}
+ul.menu li{
+  list-style: none;
+  display: inline;
+}
+ul.menu li.with-submenu{
+  position: relative;
+}
+ul.menu li.with-submenu > a{
+  position: relative;
+}
+
+ul.menu li.with-submenu > a::after{
+  content: '>';
+  display: inline-block;
+  font-size: 0.8rem;
+  transform: rotate(90deg);
+  margin-left: 3px;
+}
+
+ul.menu li.with-submenu:hover > a::after,
+ul.menu li.with-submenu.active > a::after{
+  content: '>';
+  transform: rotate(-90deg);
+  margin-left: 3px;
+}
+
+ul.menu li.with-submenu ul.submenu{
+  position: absolute;
+  margin: 0;
+  display: none;
+}
+ul.menu li.with-submenu.active ul.submenu,
+ul.menu li.with-submenu:hover ul.submenu{
+  display: block;
+}
+
+ul.menu li.with-submenu ul.submenu li{
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+}
+
+ul.menu li.with-submenu ul.submenu li a{
+  font-size: .85rem;
+  padding: 5px 10px;
+  width: 100%;
+  background-color: #fff;
+}
+ul.menu li.with-submenu ul.submenu li a:not(:last-child){
+  border-bottom: 1px solid #ccc;
+}
